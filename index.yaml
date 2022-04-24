@@ -31,7 +31,7 @@ entries:
     - https://github.com/longhorn/longhorn-tests
     - https://github.com/longhorn/backing-image-manager
     urls:
-    - https://github.com/dick318/helm-charts/releases/download/longhorn-1.2.4/longhorn-1.2.4.tgz
+    - https://github.91chi.fun//https://github.com/dick318/helm-charts/releases/download/longhorn-1.2.4/longhorn-1.2.4.tgz
     version: 1.2.4
   - apiVersion: v1
     appVersion: v1.0.0
@@ -61,6 +61,6 @@ entries:
     - https://github.com/longhorn/longhorn-ui
     - https://github.com/longhorn/longhorn-tests
     urls:
-    - https://github.com/dick318/helm-charts/releases/download/longhorn-1.0.0/longhorn-1.0.0.tgz
+    - https://github.91chi.fun//https://github.com/dick318/helm-charts/releases/download/longhorn-1.0.0/longhorn-1.0.0.tgz
     version: 1.0.0
 generated: "2022-04-24T02:07:19.200898674Z"
