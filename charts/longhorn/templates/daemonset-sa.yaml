@@ -4,7 +4,7 @@ metadata:
   labels: {{- include "longhorn.labels" . | nindent 4 }}
     app: longhorn-manager
   name: longhorn-manager
-  namespace: {{ .Release.Namespace }}
+  namespace: {{ include "release_namespace" . }}
 spec:
   selector:
     matchLabels:
@@ -13,10 +13,14 @@ spec:
     metadata:
       labels: {{- include "longhorn.labels" . | nindent 8 }}
         app: longhorn-manager
+      {{- with .Values.annotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
     spec:
       containers:
       - name: longhorn-manager
-        image: "{{ .Values.image.longhorn.manager }}:{{ .Values.image.longhorn.managerTag }}"
+        image: {{ template "registry_url" . }}{{ .Values.image.longhorn.manager.repository }}:{{ .Values.image.longhorn.manager.tag }}
         imagePullPolicy: IfNotPresent
         securityContext:
           privileged: true
@@ -25,11 +29,15 @@ spec:
         - -d
         - daemon
         - --engine-image
-        - "{{ .Values.image.longhorn.engine }}:{{ .Values.image.longhorn.engineTag }}"
+        - "{{ template "registry_url" . }}{{ .Values.image.longhorn.engine.repository }}:{{ .Values.image.longhorn.engine.tag }}"
         - --instance-manager-image
-        - "{{ .Values.image.longhorn.instanceManager }}:{{ .Values.image.longhorn.instanceManagerTag }}"
+        - "{{ template "registry_url" . }}{{ .Values.image.longhorn.instanceManager.repository }}:{{ .Values.image.longhorn.instanceManager.tag }}"
+        - --share-manager-image
+        - "{{ template "registry_url" . }}{{ .Values.image.longhorn.shareManager.repository }}:{{ .Values.image.longhorn.shareManager.tag }}"
+        - --backing-image-manager-image
+        - "{{ template "registry_url" . }}{{ .Values.image.longhorn.backingImageManager.repository }}:{{ .Values.image.longhorn.backingImageManager.tag }}"
         - --manager-image
-        - "{{ .Values.image.longhorn.manager }}:{{ .Values.image.longhorn.managerTag }}"
+        - "{{ template "registry_url" . }}{{ .Values.image.longhorn.manager.repository }}:{{ .Values.image.longhorn.manager.tag }}"
         - --service-account
         - longhorn-service-account
         ports:
@@ -43,8 +51,6 @@ spec:
           mountPath: /host/dev/
         - name: proc
           mountPath: /host/proc/
-        - name: varrun
-          mountPath: /var/run/
         - name: longhorn
           mountPath: /var/lib/longhorn/
           mountPropagation: Bidirectional
@@ -72,18 +78,26 @@ spec:
       - name: proc
         hostPath:
           path: /proc/
-      - name: varrun
-        hostPath:
-          path: /var/run/
       - name: longhorn
         hostPath:
           path: /var/lib/longhorn/
       - name: longhorn-default-setting
         configMap:
           name: longhorn-default-setting
-      {{- if .Values.defaultSettings.registrySecret }}
+      {{- if .Values.privateRegistry.registrySecret }}
       imagePullSecrets:
-      - name: {{ .Values.defaultSettings.registrySecret }}
+      - name: {{ .Values.privateRegistry.registrySecret }}
+      {{- end }}
+      {{- if .Values.longhornManager.priorityClass }}
+      priorityClassName: {{ .Values.longhornManager.priorityClass | quote}}
+      {{- end }}
+      {{- if .Values.longhornManager.tolerations }}
+      tolerations:
+{{ toYaml .Values.longhornManager.tolerations | indent 6 }}
+      {{- end }}
+      {{- if .Values.longhornManager.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.longhornManager.nodeSelector | indent 8 }}
       {{- end }}
       serviceAccountName: longhorn-service-account
   updateStrategy:
@@ -96,7 +110,7 @@ metadata:
   labels: {{- include "longhorn.labels" . | nindent 4 }}
     app: longhorn-manager
   name: longhorn-backend
-  namespace: {{ .Release.Namespace }}
+  namespace: {{ include "release_namespace" . }}
 spec:
   type: {{ .Values.service.manager.type }}
   sessionAffinity: ClientIP
