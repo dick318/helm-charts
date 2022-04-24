@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: longhorn-driver-deployer
-  namespace: {{ include "release_namespace" . }}
+  namespace: {{ .Release.Namespace }}
   labels: {{- include "longhorn.labels" . | nindent 4 }}
 spec:
   replicas: 1
@@ -16,18 +16,18 @@ spec:
     spec:
       initContainers:
         - name: wait-longhorn-manager
-          image: {{ template "registry_url" . }}{{ .Values.image.longhorn.manager.repository }}:{{ .Values.image.longhorn.manager.tag }}
+          image: {{ printf "%s:%s" .Values.image.longhorn.manager .Values.image.longhorn.managerTag | quote }}
           command: ['sh', '-c', 'while [ $(curl -m 1 -s -o /dev/null -w "%{http_code}" http://longhorn-backend:9500/v1) != "200" ]; do echo waiting; sleep 2; done']
       containers:
         - name: longhorn-driver-deployer
-          image: {{ template "registry_url" . }}{{ .Values.image.longhorn.manager.repository }}:{{ .Values.image.longhorn.manager.tag }}
+          image: {{ printf "%s:%s" .Values.image.longhorn.manager .Values.image.longhorn.managerTag | quote }}
           imagePullPolicy: IfNotPresent
           command:
           - longhorn-manager
           - -d
           - deploy-driver
           - --manager-image
-          - "{{ template "registry_url" . }}{{ .Values.image.longhorn.manager.repository }}:{{ .Values.image.longhorn.manager.tag }}"
+          - {{ printf "%s:%s" .Values.image.longhorn.manager .Values.image.longhorn.managerTag | quote }}
           - --manager-url
           - http://longhorn-backend:9500/v1
           env:
@@ -47,25 +47,21 @@ spec:
           - name: KUBELET_ROOT_DIR
             value: {{ .Values.csi.kubeletRootDir }}
           {{- end }}
-          {{- if and .Values.image.csi.attacher.repository .Values.image.csi.attacher.tag }}
+          {{- if .Values.csi.attacherImage }}
           - name: CSI_ATTACHER_IMAGE
-            value: "{{ template "registry_url" . }}{{ .Values.image.csi.attacher.repository }}:{{ .Values.image.csi.attacher.tag }}"
+            value: {{ .Values.csi.attacherImage }}
           {{- end }}
-          {{- if and .Values.image.csi.provisioner.repository .Values.image.csi.provisioner.tag }}
+          {{- if .Values.csi.provisionerImage }}
           - name: CSI_PROVISIONER_IMAGE
-            value: "{{ template "registry_url" . }}{{ .Values.image.csi.provisioner.repository }}:{{ .Values.image.csi.provisioner.tag }}"
+            value: {{ .Values.csi.provisionerImage }}
           {{- end }}
-          {{- if and .Values.image.csi.nodeDriverRegistrar.repository .Values.image.csi.nodeDriverRegistrar.tag }}
+          {{- if .Values.csi.nodeDriverRegistrarImage }}
           - name: CSI_NODE_DRIVER_REGISTRAR_IMAGE
-            value: "{{ template "registry_url" . }}{{ .Values.image.csi.nodeDriverRegistrar.repository }}:{{ .Values.image.csi.nodeDriverRegistrar.tag }}"
+            value: {{ .Values.csi.nodeDriverRegistrarImage }}
           {{- end }}
-          {{- if and .Values.image.csi.resizer.repository .Values.image.csi.resizer.tag }}
+          {{- if .Values.csi.resizerImage }}
           - name: CSI_RESIZER_IMAGE
-            value: "{{ template "registry_url" . }}{{ .Values.image.csi.resizer.repository }}:{{ .Values.image.csi.resizer.tag }}"
-          {{- end }}
-          {{- if and .Values.image.csi.snapshotter.repository .Values.image.csi.snapshotter.tag }}
-          - name: CSI_SNAPSHOTTER_IMAGE
-            value: "{{ template "registry_url" . }}{{ .Values.image.csi.snapshotter.repository }}:{{ .Values.image.csi.snapshotter.tag }}"
+            value: {{ .Values.csi.resizerImage }}
           {{- end }}
           {{- if .Values.csi.attacherReplicaCount }}
           - name: CSI_ATTACHER_REPLICA_COUNT
@@ -79,25 +75,9 @@ spec:
           - name: CSI_RESIZER_REPLICA_COUNT
             value: {{ .Values.csi.resizerReplicaCount | quote }}
           {{- end }}
-          {{- if .Values.csi.snapshotterReplicaCount }}
-          - name: CSI_SNAPSHOTTER_REPLICA_COUNT
-            value: {{ .Values.csi.snapshotterReplicaCount | quote }}
-          {{- end }}
-
-      {{- if .Values.privateRegistry.registrySecret }}
+      {{- if .Values.defaultSettings.registrySecret }}
       imagePullSecrets:
-      - name: {{ .Values.privateRegistry.registrySecret }}
-      {{- end }}
-      {{- if .Values.longhornDriver.priorityClass }}
-      priorityClassName: {{ .Values.longhornDriver.priorityClass | quote}}
-      {{- end }}
-      {{- if .Values.longhornDriver.tolerations }}
-      tolerations:
-{{ toYaml .Values.longhornDriver.tolerations | indent 6 }}
-      {{- end }}
-      {{- if .Values.longhornDriver.nodeSelector }}
-      nodeSelector:
-{{ toYaml .Values.longhornDriver.nodeSelector | indent 8 }}
+      - name: {{ .Values.defaultSettings.registrySecret }}
       {{- end }}
       serviceAccountName: longhorn-service-account
       securityContext:
