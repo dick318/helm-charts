@@ -1,6 +1,7 @@
 # Charts Repo Actions Demo
 
 helm添加下面这些都是一样的
+
 https://dick318.github.io/helm-charts
 https://raw.githubusercontent.com/dick318/helm-charts/gh-pages
 https://endpoint.fastgit.org/https://github.com/dick318/helm-charts/blob/gh-pages 
