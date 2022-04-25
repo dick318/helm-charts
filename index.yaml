@@ -7,7 +7,7 @@ entries:
     description: Longhorn is a distributed block storage system for Kubernetes.
     digest: cc8f61fd25418b66e8c6b30805b6f081892b2c58a9532a2c366ca90edcb2189e
     home: https://github.com/longhorn/longhorn
-    icon: https://raw.githubusercontent.com/cncf/artwork/master/projects/longhorn/icon/color/longhorn-icon-color.png
+    icon: https://github.91chi.fun//https://endpoint.fastgit.org/https://raw.githubusercontent.com/cncf/artwork/master/projects/longhorn/icon/color/longhorn-icon-color.png
     keywords:
     - longhorn
     - storage
@@ -31,7 +31,7 @@ entries:
     - https://github.com/longhorn/longhorn-tests
     - https://github.com/longhorn/backing-image-manager
     urls:
-    - https://github.com/dick318/helm-charts/releases/download/longhorn-1.2.4/longhorn-1.2.4.tgz
+    - https://github.91chi.fun//https://github.com/dick318/helm-charts/releases/download/longhorn-1.2.4/longhorn-1.2.4.tgz
     version: 1.2.4
   - apiVersion: v1
     appVersion: v1.0.0
@@ -40,7 +40,7 @@ entries:
       by Rancher Labs.
     digest: ece0475e8d4980d7d3849964154d60326c87982c8cd59ce21ac1e45e3c60022e
     home: https://github.com/longhorn/longhorn
-    icon: https://raw.githubusercontent.com/cncf/artwork/master/projects/longhorn/horizontal/color/longhorn-horizontal-color.svg?sanitize=true
+    icon: https://github.91chi.fun//https://raw.githubusercontent.com/cncf/artwork/master/projects/longhorn/horizontal/color/longhorn-horizontal-color.svg?sanitize=true
     keywords:
     - longhorn
     - storage
@@ -61,7 +61,7 @@ entries:
     - https://github.com/longhorn/longhorn-ui
     - https://github.com/longhorn/longhorn-tests
     urls:
-    - https://github.com/dick318/helm-charts/releases/download/longhorn-1.0.0/longhorn-1.0.0.tgz
+    - https://github.91chi.fun//https://github.com/dick318/helm-charts/releases/download/longhorn-1.0.0/longhorn-1.0.0.tgz
     version: 1.0.0
   mysql:
   - annotations:
@@ -80,7 +80,7 @@ entries:
       production applications.
     digest: 9becf44fa48c4fa413533752fadd292936fa0966018e0773bc302e3d90ae202b
     home: https://github.com/bitnami/charts/tree/master/bitnami/mysql
-    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
+    icon: https://github.91chi.fun//https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
     keywords:
     - mysql
     - database
@@ -95,7 +95,7 @@ entries:
     - https://github.com/bitnami/bitnami-docker-mysql
     - https://mysql.com
     urls:
-    - https://github.com/dick318/helm-charts/releases/download/mysql-8.9.2/mysql-8.9.2.tgz
+    - https://github.91chi.fun//https://github.com/dick318/helm-charts/releases/download/mysql-8.9.2/mysql-8.9.2.tgz
     version: 8.9.2
   - apiVersion: v1
     appVersion: 5.7.26
@@ -103,7 +103,7 @@ entries:
     description: Chart to create a Highly available MySQL cluster
     digest: 269ab8512b7efa0cf13ca493563b72c75f7e5387fc049519cf78213d1e61bd4d
     home: https://mysql.com
-    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
+    icon: https://github.91chi.fun//https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
     keywords:
     - mysql
     - database
@@ -117,6 +117,6 @@ entries:
     sources:
     - https://github.com/bitnami/bitnami-docker-mysql
     urls:
-    - https://github.com/dick318/helm-charts/releases/download/mysql-4.5.2/mysql-4.5.2.tgz
+    - https://github.91chi.fun//https://github.com/dick318/helm-charts/releases/download/mysql-4.5.2/mysql-4.5.2.tgz
     version: 4.5.2
 generated: "2022-04-25T01:27:04.788022374Z"
