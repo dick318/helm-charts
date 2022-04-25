@@ -12,6 +12,8 @@ https://github.91chi.fun//https://github.com/dick318/helm-charts/blob/gh-pages
 
 要查看yaml就在上面的地址后面加上 /index.yaml
 
+
+
 [![](https://github.com/helm/charts-repo-actions-demo/workflows/Release%20Charts/badge.svg?branch=main)](https://github.com/helm/charts-repo-actions-demo/actions)
 
 Example project to demo testing and hosting a chart repository with GitHub Pages and Actions.
