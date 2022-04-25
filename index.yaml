@@ -63,4 +63,60 @@ entries:
     urls:
     - https://github.com/dick318/helm-charts/releases/download/longhorn-1.0.0/longhorn-1.0.0.tgz
     version: 1.0.0
-generated: "2022-04-24T02:07:19.200898674Z"
+  mysql:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 8.0.28
+    created: "2022-04-25T01:27:04.787998774Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: MySQL is a fast, reliable, scalable, and easy to use open source
+      relational database system. Designed to handle mission-critical, heavy-load
+      production applications.
+    digest: 9becf44fa48c4fa413533752fadd292936fa0966018e0773bc302e3d90ae202b
+    home: https://github.com/bitnami/charts/tree/master/bitnami/mysql
+    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
+    keywords:
+    - mysql
+    - database
+    - sql
+    - cluster
+    - high availability
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mysql
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mysql
+    - https://mysql.com
+    urls:
+    - https://github.com/dick318/helm-charts/releases/download/mysql-8.9.2/mysql-8.9.2.tgz
+    version: 8.9.2
+  - apiVersion: v1
+    appVersion: 5.7.26
+    created: "2022-04-25T01:27:04.672834106Z"
+    description: Chart to create a Highly available MySQL cluster
+    digest: 269ab8512b7efa0cf13ca493563b72c75f7e5387fc049519cf78213d1e61bd4d
+    home: https://mysql.com
+    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
+    keywords:
+    - mysql
+    - database
+    - sql
+    - cluster
+    - high availablity
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mysql
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mysql
+    urls:
+    - https://github.com/dick318/helm-charts/releases/download/mysql-4.5.2/mysql-4.5.2.tgz
+    version: 4.5.2
+generated: "2022-04-25T01:27:04.788022374Z"
