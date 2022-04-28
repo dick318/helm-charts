@@ -1,0 +1,175 @@
+apiVersion: v1
+entries:
+  dolphinscheduler:
+  - apiVersion: v2
+    appVersion: 3.0.0-alpha
+    created: "2022-04-28T09:22:59.661012666Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.3.18
+    - condition: zookeeper.enabled
+      name: zookeeper
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.5.3
+    description: Dolphin Scheduler is a distributed and easy-to-expand visual DAG
+      workflow scheduling system, dedicated to solving the complex dependencies in
+      data processing, making the scheduling system out of the box for data processing.
+    digest: 4c9e00c407fa41b0d721674bf986e2b2e341549f46cacfdd4678bea9631da4ff
+    home: https://dolphinscheduler.apache.org
+    icon: https://dolphinscheduler.apache.org/img/hlogo_colorful.svg
+    keywords:
+    - dolphinscheduler
+    - scheduler
+    name: dolphinscheduler
+    type: application
+    urls:
+    - https://github.com/dick318/helm-charts/releases/download/dolphinscheduler-3.0.0-alpha/dolphinscheduler-3.0.0-alpha.tgz
+    version: 3.0.0-alpha
+  - apiVersion: v2
+    appVersion: 2.0.5
+    created: "2022-04-28T09:22:59.476207479Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.3.18
+    - condition: zookeeper.enabled
+      name: zookeeper
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.5.3
+    description: Dolphin Scheduler is a distributed and easy-to-expand visual DAG
+      workflow scheduling system, dedicated to solving the complex dependencies in
+      data processing, making the scheduling system out of the box for data processing.
+    digest: 4fbfea9c40eddd306e8dd1d70fbcf9032d9236f7fa6cdccaf8ceb1f5400bd872
+    home: https://dolphinscheduler.apache.org
+    icon: https://dolphinscheduler.apache.org/img/hlogo_colorful.svg
+    keywords:
+    - dolphinscheduler
+    - scheduler
+    name: dolphinscheduler
+    type: application
+    urls:
+    - https://github.com/dick318/helm-charts/releases/download/dolphinscheduler-2.0.3/dolphinscheduler-2.0.3.tgz
+    version: 2.0.3
+  longhorn:
+  - apiVersion: v1
+    appVersion: v1.2.4
+    created: "2022-04-28T09:22:59.939535121Z"
+    description: Longhorn is a distributed block storage system for Kubernetes.
+    digest: abb9ead7b5486723cd4b92be5a38c6be1b0a84539f26c49bf97e073b4d47ae80
+    home: https://github.com/longhorn/longhorn
+    icon: https://raw.githubusercontent.com/cncf/artwork/master/projects/longhorn/icon/color/longhorn-icon-color.png
+    keywords:
+    - longhorn
+    - storage
+    - distributed
+    - block
+    - device
+    - iscsi
+    - nfs
+    kubeVersion: '>=1.18.0-0'
+    maintainers:
+    - email: maintainers@longhorn.io
+      name: Longhorn maintainers
+    name: longhorn
+    sources:
+    - https://github.com/longhorn/longhorn
+    - https://github.com/longhorn/longhorn-engine
+    - https://github.com/longhorn/longhorn-instance-manager
+    - https://github.com/longhorn/longhorn-share-manager
+    - https://github.com/longhorn/longhorn-manager
+    - https://github.com/longhorn/longhorn-ui
+    - https://github.com/longhorn/longhorn-tests
+    - https://github.com/longhorn/backing-image-manager
+    urls:
+    - https://github.com/dick318/helm-charts/releases/download/longhorn-1.2.4/longhorn-1.2.4.tgz
+    version: 1.2.4
+  - apiVersion: v1
+    appVersion: v1.0.0
+    created: "2022-04-28T09:22:59.8202955Z"
+    description: Longhorn is a distributed block storage system for Kubernetes powered
+      by Rancher Labs.
+    digest: aca5c131764d9700c7bec1551356ae1586630639426351b2c46451e1c1c280f1
+    home: https://github.com/longhorn/longhorn
+    icon: https://raw.githubusercontent.com/cncf/artwork/master/projects/longhorn/horizontal/color/longhorn-horizontal-color.svg?sanitize=true
+    keywords:
+    - longhorn
+    - storage
+    - distributed
+    - block
+    - device
+    - iscsi
+    kubeVersion: '>=v1.14.0-r0'
+    maintainers:
+    - email: charts@rancher.com
+      name: rancher
+    name: longhorn
+    sources:
+    - https://github.com/longhorn/longhorn
+    - https://github.com/longhorn/longhorn-engine
+    - https://github.com/longhorn/longhorn-instance-manager
+    - https://github.com/longhorn/longhorn-manager
+    - https://github.com/longhorn/longhorn-ui
+    - https://github.com/longhorn/longhorn-tests
+    urls:
+    - https://github.com/dick318/helm-charts/releases/download/longhorn-1.0.0/longhorn-1.0.0.tgz
+    version: 1.0.0
+  mysql:
+  - annotations:
+      category: Database
+    apiVersion: v2
+    appVersion: 8.0.28
+    created: "2022-04-28T09:23:00.192028113Z"
+    dependencies:
+    - name: common
+      repository: https://charts.bitnami.com/bitnami
+      tags:
+      - bitnami-common
+      version: 1.x.x
+    description: MySQL is a fast, reliable, scalable, and easy to use open source
+      relational database system. Designed to handle mission-critical, heavy-load
+      production applications.
+    digest: 259b529cff0802e99abde3edc9fa750ab90cfa961f449e329b9cd762484cc09f
+    home: https://github.com/bitnami/charts/tree/master/bitnami/mysql
+    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
+    keywords:
+    - mysql
+    - database
+    - sql
+    - cluster
+    - high availability
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mysql
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mysql
+    - https://mysql.com
+    urls:
+    - https://github.com/dick318/helm-charts/releases/download/mysql-8.9.2/mysql-8.9.2.tgz
+    version: 8.9.2
+  - apiVersion: v1
+    appVersion: 5.7.26
+    created: "2022-04-28T09:23:00.067555399Z"
+    description: Chart to create a Highly available MySQL cluster
+    digest: d9b76d1b81f47b66764d9b521497a079d835e20e21ac0485839aba1090237470
+    home: https://mysql.com
+    icon: https://bitnami.com/assets/stacks/mysql/img/mysql-stack-220x234.png
+    keywords:
+    - mysql
+    - database
+    - sql
+    - cluster
+    - high availablity
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    name: mysql
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mysql
+    urls:
+    - https://github.com/dick318/helm-charts/releases/download/mysql-4.5.2/mysql-4.5.2.tgz
+    version: 4.5.2
+generated: "2022-04-28T09:23:00.192080714Z"
