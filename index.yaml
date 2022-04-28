@@ -29,6 +29,32 @@ entries:
     version: 3.0.0-alpha
   - apiVersion: v2
     appVersion: 2.0.5
+    created: "2022-04-28T09:29:14.517440245Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.3.18
+    - condition: zookeeper.enabled
+      name: zookeeper
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.5.3
+    description: Dolphin Scheduler is a distributed and easy-to-expand visual DAG
+      workflow scheduling system, dedicated to solving the complex dependencies in
+      data processing, making the scheduling system out of the box for data processing.
+    digest: b5e9a971fe3920ce42f6048df3ecb9dc39131f56434dcb8344ebc2a5dd355107
+    home: https://dolphinscheduler.apache.org
+    icon: https://dolphinscheduler.apache.org/img/hlogo_colorful.svg
+    keywords:
+    - dolphinscheduler
+    - scheduler
+    name: dolphinscheduler
+    type: application
+    urls:
+    - https://github.com/dick318/helm-charts/releases/download/dolphinscheduler-2.0.5/dolphinscheduler-2.0.5.tgz
+    version: 2.0.5
+  - apiVersion: v2
+    appVersion: 2.0.5
     created: "2022-04-28T09:22:59.476207479Z"
     dependencies:
     - condition: postgresql.enabled
@@ -172,4 +198,4 @@ entries:
     urls:
     - https://github.com/dick318/helm-charts/releases/download/mysql-4.5.2/mysql-4.5.2.tgz
     version: 4.5.2
-generated: "2022-04-28T09:23:00.192080714Z"
+generated: "2022-04-28T09:29:14.517467746Z"
