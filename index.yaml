@@ -53,6 +53,58 @@ entries:
     urls:
     - https://github.com/dick318/helm-charts/releases/download/dolphinscheduler-3.0.0-alpha/dolphinscheduler-3.0.0-alpha.tgz
     version: 3.0.0-alpha
+  - apiVersion: v2
+    appVersion: 3.0.0-alpha
+    created: "2022-04-28T09:00:48.485893176Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.3.18
+    - condition: zookeeper.enabled
+      name: zookeeper
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.5.3
+    description: Dolphin Scheduler is a distributed and easy-to-expand visual DAG
+      workflow scheduling system, dedicated to solving the complex dependencies in
+      data processing, making the scheduling system out of the box for data processing.
+    digest: 35a61bcb8263ef9015c68a4052f633ef6f1dd8c9a787aa2274a381883e072ef7
+    home: https://dolphinscheduler.apache.org
+    icon: https://dolphinscheduler.apache.org/img/hlogo_colorful.svg
+    keywords:
+    - dolphinscheduler
+    - scheduler
+    name: dolphinscheduler
+    type: application
+    urls:
+    - https://github.com/dick318/helm-charts/releases/download/dolphinscheduler-3.0.0-alpha/dolphinscheduler-3.0.0-alpha.tgz
+    version: 3.0.0-alpha
+  - apiVersion: v2
+    appVersion: 2.0.5
+    created: "2022-04-28T09:00:48.307342318Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 10.3.18
+    - condition: zookeeper.enabled
+      name: zookeeper
+      repository: https://charts.bitnami.com/bitnami
+      version: 6.5.3
+    description: Dolphin Scheduler is a distributed and easy-to-expand visual DAG
+      workflow scheduling system, dedicated to solving the complex dependencies in
+      data processing, making the scheduling system out of the box for data processing.
+    digest: 822cb6d628436758702ec60b159a57f71ffd17e07df52da98efdbbaf7694e1fc
+    home: https://dolphinscheduler.apache.org
+    icon: https://dolphinscheduler.apache.org/img/hlogo_colorful.svg
+    keywords:
+    - dolphinscheduler
+    - scheduler
+    name: dolphinscheduler
+    type: application
+    urls:
+    - https://github.com/dick318/helm-charts/releases/download/dolphinscheduler-2.0.3/dolphinscheduler-2.0.3.tgz
+    version: 2.0.3
   longhorn:
   - apiVersion: v1
     appVersion: v1.2.4
@@ -172,4 +224,4 @@ entries:
     urls:
     - https://github.91chi.fun//https://github.com/dick318/helm-charts/releases/download/mysql-4.5.2/mysql-4.5.2.tgz
     version: 4.5.2
-generated: "2022-04-28T06:28:45.181677388Z"
+generated: "2022-04-28T09:00:48.949427598Z"
