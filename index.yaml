@@ -2,6 +2,36 @@ apiVersion: v1
 entries:
   dolphinscheduler:
   - apiVersion: v2
+    appVersion: 3.1.0
+    created: "2022-11-01T02:49:25.886224692Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://raw.githubusercontent.com/bitnami/charts/archive-full-index/bitnami
+      version: 10.3.18
+    - condition: zookeeper.enabled
+      name: zookeeper
+      repository: https://raw.githubusercontent.com/bitnami/charts/archive-full-index/bitnami
+      version: 6.5.3
+    - condition: mysql.enabled
+      name: mysql
+      repository: https://raw.githubusercontent.com/bitnami/charts/archive-full-index/bitnami
+      version: 9.4.1
+    description: Dolphin Scheduler is a distributed and easy-to-expand visual DAG
+      workflow scheduling system, dedicated to solving the complex dependencies in
+      data processing, making the scheduling system out of the box for data processing.
+    digest: ea77650d929efa3edaf60eb82cec4ee1ffca9ab6ad508bc9248e3d9a114fc9b4
+    home: https://dolphinscheduler.apache.org
+    icon: https://dolphinscheduler.apache.org/img/hlogo_colorful.svg
+    keywords:
+    - dolphinscheduler
+    - scheduler
+    name: dolphinscheduler
+    type: application
+    urls:
+    - https://github.com/dick318/helm-charts/releases/download/dolphinscheduler-3.1.0/dolphinscheduler-3.1.0.tgz
+    version: 3.1.0
+  - apiVersion: v2
     appVersion: 3.0.0-alpha
     created: "2022-04-28T09:22:59.661012666Z"
     dependencies:
@@ -54,6 +84,38 @@ entries:
     - https://github.com/dick318/helm-charts/releases/download/dolphinscheduler-2.0.5/dolphinscheduler-2.0.5.tgz
     version: 2.0.5
   longhorn:
+  - apiVersion: v1
+    appVersion: v1.3.2
+    created: "2022-11-01T02:49:26.123730457Z"
+    description: Longhorn is a distributed block storage system for Kubernetes.
+    digest: 8cdd15ecf834f861a65c7b829ad1cd8287688a65486003d7a1daeec975bfaae1
+    home: https://github.com/longhorn/longhorn
+    icon: https://raw.githubusercontent.com/cncf/artwork/master/projects/longhorn/icon/color/longhorn-icon-color.png
+    keywords:
+    - longhorn
+    - storage
+    - distributed
+    - block
+    - device
+    - iscsi
+    - nfs
+    kubeVersion: '>=1.18.0-0 <1.25.0-0'
+    maintainers:
+    - email: maintainers@longhorn.io
+      name: Longhorn maintainers
+    name: longhorn
+    sources:
+    - https://github.com/longhorn/longhorn
+    - https://github.com/longhorn/longhorn-engine
+    - https://github.com/longhorn/longhorn-instance-manager
+    - https://github.com/longhorn/longhorn-share-manager
+    - https://github.com/longhorn/longhorn-manager
+    - https://github.com/longhorn/longhorn-ui
+    - https://github.com/longhorn/longhorn-tests
+    - https://github.com/longhorn/backing-image-manager
+    urls:
+    - https://github.com/dick318/helm-charts/releases/download/longhorn-1.3.2/longhorn-1.3.2.tgz
+    version: 1.3.2
   - apiVersion: v1
     appVersion: v1.2.4
     created: "2022-04-28T09:22:59.939535121Z"
@@ -172,4 +234,4 @@ entries:
     urls:
     - https://github.com/dick318/helm-charts/releases/download/mysql-4.5.2/mysql-4.5.2.tgz
     version: 4.5.2
-generated: "2022-04-28T09:29:14.517467746Z"
+generated: "2022-11-01T02:49:26.123757557Z"
