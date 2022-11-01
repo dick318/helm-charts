@@ -6,7 +6,7 @@ https://dick318.github.io/helm-charts
 
 https://raw.githubusercontent.com/dick318/helm-charts/gh-pages
 
-https://endpoint.fastgit.org/https://github.com/dick318/helm-charts/blob/gh-pages 
+https://endpoint.fastgit.org/https://github.com/dick318/helm-charts/blob/gh-pages  （推荐）
 
 https://github.91chi.fun//https://github.com/dick318/helm-charts/blob/gh-pages
 
